@@ -4,7 +4,8 @@
 %%  1. Generate session metadata struct using the template script and display the metadata in the session gui
 
 % Neuropixels recording from a pilot study from a rat (384 channels, 200GB, ~2.5 hours)
-basepath = '/Volumes/Peter_SSD_4/NeuropixelsData/PP02/PP02_2020-07-10';
+% basepath = '/Volumes/Peter_SSD_4/NeuropixelsData/PP02/PP02_2020-07-10';
+basepath = 'D:\LabData\Neuropixels\20250211_semicronic1_g0\20250211_semicronic1_g0_imec0';
 cd(basepath)
 
 % PP02_2020-07-10.dat       : raw data
@@ -19,12 +20,15 @@ session = sessionTemplate(basepath);
 session = gui_session(session);
 
 % You can validate that all required and optional fields for CellExplorer has been entered
-% validateSessionStruct(session);
+validateSessionStruct(session);
 
 
 %% 2 Run the cell metrics pipeline 'ProcessCellMetrics' using the session struct as input
 
-cell_metrics = ProcessCellMetrics('session', session,'excludeMetrics',{'monoSynaptic_connections'},'showWaveforms',false,'sessionSummaryFigure',false);
+% cell_metrics = ProcessCellMetrics('session', session,'excludeMetrics',{'monoSynaptic_connections'},'showWaveforms',false,'sessionSummaryFigure',false);
+cell_metrics = ProcessCellMetrics('session', session,'showWaveforms',true,'sessionSummaryFigure',false);
+
+
 
 % Several files are generated here
 %
