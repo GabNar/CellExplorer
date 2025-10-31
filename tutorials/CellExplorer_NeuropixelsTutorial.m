@@ -5,7 +5,7 @@
 
 % Neuropixels recording from a pilot study from a rat (384 channels, 200GB, ~2.5 hours)
 % basepath = '/Volumes/Peter_SSD_4/NeuropixelsData/PP02/PP02_2020-07-10';
-basepath = 'D:\LabData\Neuropixels\20250211_semicronic1_g0\20250211_semicronic1_g0_imec0';
+basepath = 'E:\neuropixels_data\20250213_semicronic2_g0\20250213_semicronic2_g0_imec0';
 cd(basepath)
 
 % PP02_2020-07-10.dat       : raw data
